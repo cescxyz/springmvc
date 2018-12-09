@@ -6,26 +6,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Bienvenido a Cinema</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 <body>
-	<h1>Lista de peliculas</h1>
 	
-	<ol>
-		<c:forEach items="${peliculas}" var="pelicula">
-			<li>${pelicula} </li>
-		</c:forEach> 
-	</ol>
+
+	
+	<div class="container">
+	<div class="card-header mt-5">Lista de Peliculas</div>
 	
 	<hr>
-	<table border="1">
+	<table class="table table-striped table-bordered table-hover" border="1">
+	<thead>
 	<tr>
 		<td>Id</td>
 		<td>Titulo</td>
 		<td>Duracion</td>
 		<td>Clasificacion</td>
 		<td>Genero</td>
-		
+		<td>Imagen</td>
+		<td>Fecha Estreno</td>
+		<td>Estatus</td>
 	</tr>
+	</thead>
 	<c:forEach items="${peliculas}" var="pelicula">
 		<tr>
 				<td>${pelicula.id}</td>
@@ -33,12 +37,16 @@
 				<td>${pelicula.duracion}</td>
 				<td>${pelicula.clasificacion}</td>
 				<td>${pelicula.genero}</td>
+				
+				<td>${pelicula.imagen}</td>
+				<td>${pelicula.fechaEstreno}</td>
+				<td>${pelicula.status}</td>
 		</tr>
 	</c:forEach>
 	
 	</table>
 	
-	
+	</div>
 	
 </body>
 </html>
