@@ -18,17 +18,45 @@
 <div class="card text-center">
   <div class="card-header">
     
-    <ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">My Site</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">About</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Login</a>
-  </li>
-</ul>
+    <!-- Menu de Navegacion -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<div class="container">
+  <a class="navbar-brand" href="#">Cinema</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      
+    </form>
+  </div>
+  </div>
+</nav>
     
   </div>
   
@@ -84,7 +112,7 @@
 	<div class="container">
 		<div class="row">
 		<c:forEach items="${peliculas}" var="pelicula">
-		<div class="card col-xs-12 col-sm-6 col-md-3 ml-4" style="width: 18rem;">
+		<div class="card col-xs-12 col-sm-6 col-md-3 ml-4 mb-4" style="width: 18rem;">
 				<img class="card-img-top" src="${urlPublic}/images/${pelicula.imagen}" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">${pelicula.titulo}</h5>
@@ -93,7 +121,8 @@
 					<span class="badge-success"> ${pelicula.clasificacion }</span>
 					<span class="badge-success"> ${pelicula.duracion} mins.</span>
 					<span class="badge-success"> ${pelicula.genero}</span>
-					<a href="#" class="btn btn-primary">Consulta Horarios >></a>
+					<a href="#" class="btn btn-primary btn-sm">Horarios >></a>
+					
 				</div>
 			</div>
 		</c:forEach>
@@ -106,11 +135,11 @@
 	<h5 class="card-title mt-5">Noticias y novedades</h5>
 
 	<div class="container">
-		<div class="alert alert-dark" role="alert">
+		<div class="alert alert-light" role="alert">
   		Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 		</div>
 		
-		<div class="alert alert-dark" role="alert">
+		<div class="alert alert-light" role="alert">
   		Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 		</div>
 		
