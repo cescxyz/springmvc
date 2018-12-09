@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Bienvenido a Cinema</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<spring:url value="/resources" var="urlPublic" />
 </head>
 <body>
 	
 
-	
 	<div class="container">
 	<div class="card-header mt-5">Lista de Peliculas</div>
 	
@@ -38,7 +40,13 @@
 				<td>${pelicula.clasificacion}</td>
 				<td>${pelicula.genero}</td>
 				
-				<td>${pelicula.imagen}</td>
+				<td>
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top" src="${urlPublic}/images/${pelicula.imagen}"
+								alt="Card image cap">
+						</div>
+
+					</td>
 				<td>${pelicula.fechaEstreno}</td>
 				<td>${pelicula.status}</td>
 		</tr>
