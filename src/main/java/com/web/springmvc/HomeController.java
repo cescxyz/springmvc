@@ -1,5 +1,8 @@
 package com.web.springmvc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +14,17 @@ public class HomeController {
     
     @RequestMapping(value="/home", method=RequestMethod.GET)
     public String goHome() {
+        return "home";
+    }
+    
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public String mostrarPrincipal(Model model) {
+    	List<String> peliculas= new ArrayList<>();
+    	peliculas.add("peli1");
+    	peliculas.add("peli2");
+    	peliculas.add("peli3");
+    	peliculas.add("peli4");
+    	model.addAttribute("peliculas",peliculas);
         return "home";
     }
     
