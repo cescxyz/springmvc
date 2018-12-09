@@ -9,62 +9,101 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Bienvenido a Cinema</title>
-
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<spring:url value="/resources" var="urlPublic" />
 </head>
 <body>
-	
+
+
+<div class="card text-center">
+  <div class="card-header">
+    Lista de Peliculas
+  </div>
+  
+  <!-- Cuerpo -->
+  <div class="card-body">
 
 	<div class="container">
-	<div class="card-header mt-5">Lista de Peliculas</div>
-	
+	<!-- Carousel boostratp 4 -->
+	<div class ="container">
+	<div id="carouselExampleIndicators" class="carousel slide"
+			data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-50"
+						src="${urlPublic}/images/cinema2.jpg"
+						alt="First slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-50"
+						src="${urlPublic}/images/cinema2.jpg"
+						alt="Second slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-50"
+						src="${urlPublic}/images/cinema2.jpg"
+						alt="Third slide">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators"
+				role="button" data-slide="prev"> <span
+				class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+				role="button" data-slide="next"> <span
+				class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
 	<hr>
-	<table class="table table-striped table-bordered table-hover" border="1">
-	<thead>
-	<tr>
-		<td>Id</td>
-		<td>Titulo</td>
-		<td>Duracion</td>
-		<td>Clasificacion</td>
-		<td>Genero</td>
-		<td>Imagen</td>
-		<td>Fecha Estreno</td>
-		<td>Estatus</td>
-	</tr>
-	</thead>
-	<c:forEach items="${peliculas}" var="pelicula">
-		<tr>
-				<td>${pelicula.id}</td>
-				<td>${pelicula.titulo}</td>
-				<td>${pelicula.duracion}</td>
-				<td>${pelicula.clasificacion}</td>
-				<td>${pelicula.genero}</td>
-				<td>
-						<div class="card" style="width: 18rem;">
-							<img class="card-img-top" src="${urlPublic}/images/${pelicula.imagen}"
-								alt="Card image cap">
-						</div>
-				</td>
-				<td>
-					<fmt:formatDate value="${pelicula.fechaEstreno}" pattern="dd-MM-yyyy" />
-				</td>
-				<td>
-					<c:choose>
-						<c:when test="${pelicula.status=='Activa'}">
-							<span class="badge-success"> Activa</span>
-						</c:when>
-						<c:otherwise>
-							<span class="badge-danger"> Inactiva</span>
-						</c:otherwise>
-					</c:choose>
-				</td>
-		</tr>
-	</c:forEach>
-	
-	</table>
-	
 	</div>
 	
+	<hr>
+
+	<!-- Container movies -->
+	<h5 class="card-title">Catálogo</h5>
+	<div class="container">
+		<div class="row">
+		<c:forEach items="${peliculas}" var="pelicula">
+		<div class="card col-xs-12 col-sm-6 col-md-3 ml-4" style="width: 18rem;">
+				<img class="card-img-top" src="${urlPublic}/images/${pelicula.imagen}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">${pelicula.titulo}</h5>
+					<p class="card-text">Some quick example text to build on the
+						card title and make .</p>
+					<span class="badge-success"> ${pelicula.clasificacion }</span>
+					<span class="badge-success"> ${pelicula.duracion} mins.</span>
+					<span class="badge-success"> ${pelicula.genero}</span>
+					<a href="#" class="btn btn-primary">Consulta Horarios >></a>
+				</div>
+			</div>
+		</c:forEach>
+
+		</div>
+	</div>    
+
+  </div>
+  
+  
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+
+
+
+
+
+	<!-- Bootstrap 4 -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
