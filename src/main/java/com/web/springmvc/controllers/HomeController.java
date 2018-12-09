@@ -51,7 +51,7 @@ public class HomeController {
 	    	Pelicula p2 = new Pelicula();
 	    	Pelicula p3 = new Pelicula();
 	    	p1.setId(1);p1.setTitulo("Fast 1");p1.setDuracion(120);p1.setClasificacion("B");p1.setGenero("Aventura");p1.setFechaEstreno(formater.parse("02-05-2018"));
-	    	p2.setId(2);p2.setTitulo("Fast 2");p2.setDuracion(320);p2.setClasificacion("B-15");p2.setGenero("Terror");p2.setFechaEstreno(formater.parse("02-05-2018"));
+	    	p2.setId(2);p2.setTitulo("Fast 2");p2.setDuracion(320);p2.setClasificacion("B-15");p2.setGenero("Terror");p2.setFechaEstreno(formater.parse("02-05-2018"));p2.setStatus("Inactiva");
 	    	p3.setId(3);p3.setTitulo("Fast 3");p3.setDuracion(820);p3.setClasificacion("C");p3.setGenero("Accion");p3.setFechaEstreno(formater.parse("10-10-2018"));
 	    	peliculas.add(p1);peliculas.add(p2);peliculas.add(p3);
     	}catch (Exception e) {

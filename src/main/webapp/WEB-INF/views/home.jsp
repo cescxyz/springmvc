@@ -40,18 +40,25 @@
 				<td>${pelicula.duracion}</td>
 				<td>${pelicula.clasificacion}</td>
 				<td>${pelicula.genero}</td>
-				
 				<td>
 						<div class="card" style="width: 18rem;">
 							<img class="card-img-top" src="${urlPublic}/images/${pelicula.imagen}"
 								alt="Card image cap">
 						</div>
-
-					</td>
+				</td>
 				<td>
 					<fmt:formatDate value="${pelicula.fechaEstreno}" pattern="dd-MM-yyyy" />
 				</td>
-				<td>${pelicula.status}</td>
+				<td>
+					<c:choose>
+						<c:when test="${pelicula.status=='Activa'}">
+							<span class="badge-success"> Activa</span>
+						</c:when>
+						<c:otherwise>
+							<span class="badge-danger"> Inactiva</span>
+						</c:otherwise>
+					</c:choose>
+				</td>
 		</tr>
 	</c:forEach>
 	
