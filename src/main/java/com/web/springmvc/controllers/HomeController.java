@@ -41,7 +41,7 @@ public class HomeController {
     }
     
     
-    @RequestMapping(value="/detail")
+    @RequestMapping(value="/detail", method=RequestMethod.POST)
     public String MostrarDetalle(Model model) {
     	String tituloPelicula = "Rapidos y Furiosos";
     	int duracion = 136;

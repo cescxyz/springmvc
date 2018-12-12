@@ -83,7 +83,15 @@
 					<span class="badge-success"> ${pelicula.clasificacion }</span>
 					<span class="badge-success"> ${pelicula.duracion} mins.</span>
 					<span class="badge-success"> ${pelicula.genero}</span>
-					<a href="#" class="btn btn-primary btn-sm">Horarios >></a>
+					
+						<a href="#" class="btn btn-primary btn-sm">Horarios >></a>
+					
+					<form method="POST" action="${pageContext.request.contextPath}/detail">
+					 <input type="hidden" name="accion"  id="accion"/>
+					<input type="submit" value="Submit"/>
+					</form>
+					
+					
 					
 				</div>
 			</div>
