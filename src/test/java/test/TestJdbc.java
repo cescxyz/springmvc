@@ -9,6 +9,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.web.springmvc.jdbc.Persona;
+import com.web.springmvc.jdbc.PersonaDao;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:datasource-test.xml"})
 public class TestJdbc {
@@ -17,6 +20,8 @@ public class TestJdbc {
     
     @Autowired
     JdbcTemplate jdbcTemplate;
+    
+    
 
     @Test
     public void testJdbc() {
@@ -28,6 +33,9 @@ public class TestJdbc {
 
         assertEquals(3, noPersonas);
 
+        
+        
+        
         System.out.println("Fin del test Jdbc");
 
     }

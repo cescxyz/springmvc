@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.web.springmvc.models.Pelicula;
+import com.web.springmvc.services.PeliculaService;
 
 @Controller
 public class HomeController {
 
 	@Autowired
-    JdbcTemplate jdbcTemplate;
+	PeliculaService peliculaService;
     
     @RequestMapping(value="/home", method=RequestMethod.GET)
     public String goHome() {
@@ -28,14 +29,13 @@ public class HomeController {
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String mostrarPrincipal(Model model) {
     	List<Pelicula> peliculas= new ArrayList<>();
-    	peliculas = getPeliculas();
+    	peliculas = peliculaService.listarPeliculas();
     	model.addAttribute("peliculas",peliculas);
     	
-    	//Testing
-    	String sql = "select count(*) from persona";
-        int noPersonas = jdbcTemplate.queryForObject(sql, Integer.class);
     	
-        model.addAttribute("personasCount",noPersonas);
+        int noPeliculas = peliculaService.listarPeliculas().size();
+    	
+        model.addAttribute("personasCount",noPeliculas);
         
         return "home";
     }
