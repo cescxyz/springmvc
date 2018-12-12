@@ -25,6 +25,7 @@ version="3.1">
   	<servlet-name>springmvc</servlet-name>
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
-  
-  
+
+	
+    
 </web-app>

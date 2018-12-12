@@ -70,7 +70,7 @@
 	<hr>
 
 	<!-- Container movies -->
-	<h5 class="card-title">Catálogo</h5>
+	<h5 class="card-title">Catálogo ${personasCount}</h5>
 	<div class="container">
 		<div class="row">
 		<c:forEach items="${peliculas}" var="pelicula">
